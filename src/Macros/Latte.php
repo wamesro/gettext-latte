@@ -120,8 +120,10 @@ class Latte extends \Latte\Macros\MacroSet {
                 return preg_replace('/^' . $find[1] . '/', '', $args);
             }
             return $args;
+        } else {
+            $this->setFunction('g_');
+            return $args;
         }
-        throw new \Latte\CompileException('Wrong macro');
     }
 
     /**
